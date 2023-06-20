@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
+	import logo from '$lib/images/logo.svg';
 	import github from '$lib/images/github.svg';
 	let navbarOpen = false;
 
@@ -9,84 +9,90 @@
 	}
 </script>
 
-<!-- ====== Navbar Section Start -->
 <header class="flex w-full items-center bg-white">
-  <div class="container mx-auto">
-    <div class="relative -mx-4 flex items-center justify-between">
-      <div class="w-60 max-w-full px-4">
-        <a href="javascript:void(0)" class="block w-full py-5">
-          <img
-            src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo.svg"
-            alt="logo"
-            class="w-full"
-          />
-        </a>
-      </div>
-      <div class="flex w-full items-center justify-between px-4">
-        <div>
-          <button
-		  	on:click|once={ toggleNav }
-            id="navbarToggler"
-            class="{ navbarOpen ? 'navbarTogglerActive' : ''} ring-primary absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] focus:ring-2 lg:hidden"
-          >
-            <span
-              class="bg-body-color relative my-[6px] block h-[2px] w-[30px]"
-            ></span>
-            <span
-              class="bg-body-color relative my-[6px] block h-[2px] w-[30px]"
-            ></span>
-            <span
-              class="bg-body-color relative my-[6px] block h-[2px] w-[30px]"
-            ></span>
-          </button>
-          <nav
-            id="navbarCollapse"
-            class="{!navbarOpen ? 'hidden' : ''} absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 px-6 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none"
-          >
-            <ul class="block lg:flex">
-              <li>
-                <a
-                  href="javascript:void(0)"
-                  class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="javascript:void(0)"
-                  class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
-                >
-                  Payment
-                </a>
-              </li>
-              <li>
-                <a
-                  href="javascript:void(0)"
-                  class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
-                >
-                  Features
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
-          <a
-            href="javascript:void(0)"
-            class="text-dark hover:text-primary py-3 px-7 text-base font-medium"
-          >
-            Login
-          </a>
-          <a
-            href="javascript:void(0)"
-            class="bg-primary rounded-lg py-3 px-7 text-base font-medium text-white hover:bg-opacity-90"
-          >
-            Sign Up
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="container mx-auto">
+		<div class="relative -mx-4 flex items-center justify-between">
+			<div class="max-w-full px-4">
+				<a href="javascript:void(0)" class="block w-full py-5">
+					<img
+						src={logo}
+						alt="dafuq"
+						class="w-auto h-50"
+					/>
+				</a>
+			</div>
+			<div class="flex w-full items-center justify-between px-4">
+				<div>
+					<button
+						on:click={toggleNav}
+						id="navbarToggler"
+						class="{navbarOpen
+							? 'navbarTogglerActive'
+							: ''} ring-primary absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] focus:ring-2 lg:hidden"
+					>
+						<span class="bg-body-color relative my-[6px] block h-[2px] w-[30px]" />
+						<span class="bg-body-color relative my-[6px] block h-[2px] w-[30px]" />
+						<span class="bg-body-color relative my-[6px] block h-[2px] w-[30px]" />
+					</button>
+					<nav
+						id="navbarCollapse"
+						class="{!navbarOpen
+							? 'hidden'
+							: ''} absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 px-6 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none"
+					>
+						<ul class="block lg:flex">
+							<li>
+								<a
+									href="/essays"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									Essays
+								</a>
+							</li>
+							<li>
+								<a
+									href="/about"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									About
+								</a>
+							</li>
+							<li>
+								<a
+									href="/request"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									Requests
+								</a>
+							</li>
+							<li>
+								<a
+									href="/Contact"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									Contact
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+					<a href="javascript:void(0)" class="block py-5">
+						<img src={github} alt="GitHub" class="github" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </header>
 <!-- ====== Navbar Section End -->
+
+
+<style>
+	.github {
+		height: 1.5rem;
+	}
+	.h-50 {
+		height: 5rem;
+	}
+</style>

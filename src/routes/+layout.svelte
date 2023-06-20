@@ -4,6 +4,7 @@
 	import { webVitals } from '$lib/vitals';
 	import Header from './Header.svelte';
 	import "../app.css";
+	import Footer from './Footer.svelte';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -17,7 +18,6 @@
 	}
 </script>
 
-<h1>+layout.svelte</h1>
 <div class="app">
 	<Header />
 
@@ -25,9 +25,7 @@
 		<slot />
 	</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	<Footer />
 </div>
 
 <style>
