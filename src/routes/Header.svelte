@@ -20,6 +20,7 @@
 			<div class="flex w-full items-center justify-between px-4">
 				<div>
 					<button
+						title="Toggle Navbar"
 						on:click={toggleNav}
 						id="navbarToggler"
 						class="{navbarOpen
