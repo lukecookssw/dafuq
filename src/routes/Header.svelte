@@ -1,129 +1,102 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
+	import logo from '$lib/images/logo.svg';
 	import github from '$lib/images/github.svg';
+	let navbarOpen = false;
+
+	function toggleNav() {
+		navbarOpen = !navbarOpen;
+	}
 </script>
 
-<header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
-	</div>
-
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
-
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
+<header class="flex w-full items-center bg-white">
+	<div class="container mx-auto">
+		<div class="relative -mx-4 flex items-center justify-between">
+			<div class="max-w-full px-4">
+				<a href="/" class="block w-full py-5">
+					<img src={logo} alt="dafuq" class="w-auto h-50" />
+				</a>
+			</div>
+			<div class="flex w-full items-center justify-between px-4">
+				<div>
+					<button
+						on:click={toggleNav}
+						id="navbarToggler"
+						class="{navbarOpen
+							? 'navbarTogglerActive'
+							: ''} ring-primary absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] focus:ring-2 lg:hidden"
+					>
+						<span class="bg-body-color relative my-[6px] block h-[2px] w-[30px]" />
+						<span class="bg-body-color relative my-[6px] block h-[2px] w-[30px]" />
+						<span class="bg-body-color relative my-[6px] block h-[2px] w-[30px]" />
+					</button>
+					<nav
+						id="navbarCollapse"
+						class="{!navbarOpen
+							? 'hidden'
+							: ''} absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 px-6 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none"
+					>
+						<ul class="block lg:flex">
+							<li>
+								<a
+									href="/"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									Home
+								</a>
+							</li>
+							<li>
+								<a
+									href="/about"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									About
+								</a>
+							</li>
+							<li>
+								<a
+									href="/essays"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									Essays
+								</a>
+							</li>
+							<li>
+								<a
+									href="/requests"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									Requests
+								</a>
+							</li>
+							<li>
+								<a
+									href="/contact"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									Contact
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+					<a href="https://github.com/lukecookssw" class="block py-5">
+						<img src={github} alt="GitHub" class="github" />
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </header>
 
+<!-- ====== Navbar Section End -->
+
 <style>
-	header {
-		display: flex;
-		justify-content: space-between;
+	.github {
+		height: 1.5rem;
 	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
+	.h-50 {
+		height: 5rem;
 	}
 </style>

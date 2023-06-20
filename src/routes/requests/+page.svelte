@@ -1,6 +1,6 @@
 <svelte:head>
-	<title>About</title>
-	<meta name="description" content="dafuq you wanna know about me" />
+	<title>Requests</title>
+	<meta name="description" content="dafuq you wanna request of me" />
 </svelte:head>
 
 <div class="text-column">

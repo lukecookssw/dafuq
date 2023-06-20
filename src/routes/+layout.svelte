@@ -3,7 +3,8 @@
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
 	import Header from './Header.svelte';
-	import './styles.css';
+	import "../app.css";
+	import Footer from './Footer.svelte';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -24,9 +25,7 @@
 		<slot />
 	</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	<Footer />
 </div>
 
 <style>
