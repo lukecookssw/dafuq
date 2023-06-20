@@ -9,5 +9,5 @@
 </svelte:head>
 
 <section>
-	<h1>+page.svelte</h1>
+	<h1 class="text-3xl font-bold underline">+page.svelte</h1>
 </section>
