@@ -13,12 +13,8 @@
 	<div class="container mx-auto">
 		<div class="relative -mx-4 flex items-center justify-between">
 			<div class="max-w-full px-4">
-				<a href="javascript:void(0)" class="block w-full py-5">
-					<img
-						src={logo}
-						alt="dafuq"
-						class="w-auto h-50"
-					/>
+				<a href="/" class="block w-full py-5">
+					<img src={logo} alt="dafuq" class="w-auto h-50" />
 				</a>
 			</div>
 			<div class="flex w-full items-center justify-between px-4">
@@ -43,10 +39,10 @@
 						<ul class="block lg:flex">
 							<li>
 								<a
-									href="/essays"
+									href="/"
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
-									Essays
+									Home
 								</a>
 							</li>
 							<li>
@@ -55,6 +51,14 @@
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
 									About
+								</a>
+							</li>
+							<li>
+								<a
+									href="/essays"
+									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
+								>
+									Essays
 								</a>
 							</li>
 							<li>
@@ -77,7 +81,7 @@
 					</nav>
 				</div>
 				<div class="hidden justify-end pr-16 sm:flex lg:pr-0">
-					<a href="javascript:void(0)" class="block py-5">
+					<a href="https://github.com/lukecookssw" class="block py-5">
 						<img src={github} alt="GitHub" class="github" />
 					</a>
 				</div>
@@ -85,8 +89,8 @@
 		</div>
 	</div>
 </header>
-<!-- ====== Navbar Section End -->
 
+<!-- ====== Navbar Section End -->
 
 <style>
 	.github {
