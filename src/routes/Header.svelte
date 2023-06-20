@@ -14,7 +14,7 @@
 		<div class="relative -mx-4 flex items-center justify-between">
 			<div class="max-w-full px-4">
 				<a href="/" class="block w-full py-5">
-					<img src={logo} alt="dafuq" class="w-auto h-50" />
+					<img src={logo} alt="dafuq" class="w-auto h-50" height="50" width="50" />
 				</a>
 			</div>
 			<div class="flex w-full items-center justify-between px-4">
@@ -82,7 +82,7 @@
 				</div>
 				<div class="hidden justify-end pr-16 sm:flex lg:pr-0">
 					<a href="https://github.com/lukecookssw" class="block py-5">
-						<img src={github} alt="GitHub" class="github" />
+						<img height="50" width="50" src={github} alt="GitHub" class="github" />
 					</a>
 				</div>
 			</div>
