@@ -3,7 +3,6 @@
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
 	import Header from './Header.svelte';
-	import './styles.css';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -17,6 +16,7 @@
 	}
 </script>
 
+<h1>+layout.svelte</h1>
 <div class="app">
 	<Header />
 
