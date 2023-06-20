@@ -63,7 +63,7 @@
 							</li>
 							<li>
 								<a
-									href="/request"
+									href="/requests"
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
 									Requests
@@ -71,7 +71,7 @@
 							</li>
 							<li>
 								<a
-									href="/Contact"
+									href="/contact"
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
 									Contact
