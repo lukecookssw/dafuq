@@ -11,10 +11,12 @@ const query = `query GetDiscussion($number: Int!) {
 }`;
 
 export const GET = async ({ params: { number }, fetch, setHeaders }) => {
-  if (number === 1) number++;
   const variables = {
     number: parseInt(number),
   };
+  if (variables.number === 1) {
+    variables.number = 2;
+  }
   try {
     const {
       repository: { discussion },
