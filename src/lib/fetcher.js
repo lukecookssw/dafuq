@@ -14,6 +14,7 @@ const fetcher = async (query, variables, fetch) => {
     return data;
   } catch (error) {
     console.log(error);
+    console.log('problem in fetcher.js');
     throw error;
   }
 };
