@@ -1,11 +1,14 @@
 <script>
-	import { page } from '$app/stores';
 	import logo from '$lib/images/logo.svg';
-	import github from '$lib/images/github.svg';
 	let navbarOpen = false;
 
 	function toggleNav() {
 		navbarOpen = !navbarOpen;
+	}
+	
+	//TODO: Investigate why the hamburger menu doesn't automatically handle this.
+	function hideNavIfOpen() {
+		navbarOpen = false;
 	}
 </script>
 
@@ -40,6 +43,7 @@
 						<ul class="block lg:flex">
 							<li>
 								<a
+									on:click={hideNavIfOpen}
 									href="/"
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
@@ -48,6 +52,7 @@
 							</li>
 							<li>
 								<a
+									on:click={hideNavIfOpen}
 									href="/about"
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
@@ -56,6 +61,7 @@
 							</li>
 							<li>
 								<a
+									on:click={hideNavIfOpen}
 									href="/essays"
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
@@ -64,6 +70,7 @@
 							</li>
 							<li>
 								<a
+									on:click={hideNavIfOpen}
 									href="/requests"
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
@@ -72,6 +79,7 @@
 							</li>
 							<li>
 								<a
+									on:click={hideNavIfOpen}
 									href="/contact"
 									class="text-dark hover:text-primary flex py-2 text-base font-medium lg:ml-12 lg:inline-flex"
 								>
@@ -81,11 +89,11 @@
 						</ul>
 					</nav>
 				</div>
-				<div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+				<!-- <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
 					<a href="https://github.com/lukecookssw" class="block py-5">
 						<img height="50" width="50" src={github} alt="GitHub" class="github" />
 					</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
