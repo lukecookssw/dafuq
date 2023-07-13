@@ -2,7 +2,7 @@ import fetcher from "$lib/fetcher";
 import { json } from "@sveltejs/kit";
 
 const query = `query GetDiscussion($number: Int!) {
-  repository(name: "dafuq", owner: "lukecookssw") {
+  repository(name: "dafuq.content", owner: "lukecookssw") {
     discussion(number: $number) {
       bodyHTML
       title
