@@ -27,7 +27,7 @@
 	</main>
 
 	<Footer />
-	<p>test</p>
+	
 </div>
 
 <style>
