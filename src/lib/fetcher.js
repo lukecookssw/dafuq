@@ -2,6 +2,7 @@ import { github_pat } from "$env/static/private";
 
 const fetcher = async (query, variables, fetch) => {
   try {
+    console.log('fetcher.js');
     const res = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
