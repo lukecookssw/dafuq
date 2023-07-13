@@ -1,0 +1,26 @@
+import fetcher from "$lib/fetcher";
+import { json } from "@sveltejs/kit";
+
+const query = `query GetDiscussion($number: Int!) {
+  repository(name: "dafuq", owner: "lukecookssw") {
+    discussion(number: $number) {
+      bodyHTML
+      title
+    }
+  }
+}`;
+
+export const GET = async ({ params: { number }, fetch, setHeaders }) => {
+  const variables = {
+    number: parseInt(number),
+  };
+  const {
+    repository: { discussion },
+  } = await fetcher(query, variables, fetch);
+
+  setHeaders({
+    "cache-control": "max-age=600",
+  });
+
+  return json(discussion);
+};
