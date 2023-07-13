@@ -1,23 +1,11 @@
 <script>
 	import theFuck from '$lib/images/the-fuck.webp';
-	export let data;
-
-  	$: ({ nodes } = data);
 </script>
 
 <svelte:head>
 	<title>dafuq.dev</title>
 	<meta name="description" content="App. Pls. Why?" />
 </svelte:head>
-
-
-<ul>
-	{#each nodes as { title, number }}
-	  <li>
-		<a href="/essays/{number}">{title}</a>
-	  </li>
-	{/each}
-  </ul>
 
 <section>
 	<div class="flex flex-col items-center">

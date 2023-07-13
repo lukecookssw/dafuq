@@ -13,16 +13,10 @@
 		</div>
 	</div>
 </footer>
-
 <!-- ====== Footer Section End -->
 
 <style>
-	footer {
-		border-top: 1px solid rgba(0, 0, 0, 0.2);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
+  footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
 </style>
