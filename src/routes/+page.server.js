@@ -1,7 +1,7 @@
 import fetcher from "$lib/fetcher";
 
 const query = `{
-  repository(name: "dafuq.content", owner: "lukecookssw") {
+  repository(name: "dafuq", owner: "lukecookssw") {
     discussions(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
       nodes {
         title
