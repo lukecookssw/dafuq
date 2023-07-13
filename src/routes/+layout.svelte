@@ -5,6 +5,7 @@
 	import Header from './Header.svelte';
 	import "../app.css";
 	import Footer from './Footer.svelte';
+	import Banner from '../components/banner/banner.svelte';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -20,7 +21,7 @@
 
 <div class="app">
 	<Header />
-
+	<Banner />
 	<main>
 		<slot />
 	</main>
@@ -46,13 +47,7 @@
 		box-sizing: border-box;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
+	
 
 	footer a {
 		font-weight: bold;
